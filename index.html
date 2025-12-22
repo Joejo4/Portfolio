@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My-Portfolio</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">PORTFOLIO</div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#skills" class="nav-link">Toolkit</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="hero-text reveal">
+          <span class="badge">Frontend Developer</span>
+          <h1>Crafting <span>Intuitive</span> User Interfaces</h1>
+          <p>
+            1.5 years of dedicated learning and building. Specializing in
+            turning complex problems into elegant, accessible web experiences
+            using modern JavaScript.
+          </p>
+          <div class="hero-btns">
+            <a href="#work" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Get in Touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic Work Section    Thought of removing this if not need-->
+      <section id="work" class="work">
+        <div class="section-header reveal">
+          <h2>Featured Work</h2>
+          <div class="filter-bar">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="js">JavaScript</button>
+            <button class="filter-btn" data-category="ui">UI/UX</button>
+            <button class="filter-btn" data-category="api">API-Driven</button>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card reveal" data-category="js">
+            <div class="project-img">
+              <img
+                src="https://placehold.co/600x400/111/fff?text=Task+Architect"
+                alt="Task App"
+              />
+            </div>
+            <div class="project-info">
+              <h3>TO Do lIST APP</h3>
+              <p>A To-Do List app withlocal storage persistence.</p>
+              <div class="tags"><span>Vanilla JS</span></div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card reveal" data-category="ui">
+            <div class="project-img">
+              <img
+                src="https://placehold.co/600x400/333/fff?text=Glass+Design"
+                alt="UI Kit"
+              />
+            </div>
+            <div class="project-info">
+              <h3>High Fashsion Store</h3>
+              <p>
+                A responsive e-commerce site built with modern CSS and
+                JavaScript.
+              </p>
+
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card reveal" data-category="ui">
+            <div class="project-img">
+              <img
+                src="https://placehold.co/600x400/333/fff?text=Glass+Design"
+                alt="UI Kit"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Animated Login Form</h3>
+              <p>
+                A responsive login form with smooth animations and transitions.
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="project-card reveal" data-category="js"></div>
+          <div class="project-img">
+            <img
+              src="https://placehold.co/600x400/333/fff?text=Glass+Design"
+              alt="UI Kit"
+            />
+          </div>
+          <div class="project-info">
+            <h3>Palindrome</h3>
+            <p>A JavaScript function to check if a string is a palindrome.</p>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills" class="skills">
+        <div class="skills-container reveal">
+          <h2>My Technical Toolkit</h2>
+          <div class="skills-wrapper">
+            <div class="skill-item">
+              <i class="fab fa-html5"></i><span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i><span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js"></i><span>ES6+</span>
+            </div>
+
+            <div class="skill-item">
+              <i class="fab fa-git-alt"></i><span>Git Versioning</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-terminal"></i><span>Command Line</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="contact-box reveal">
+          <h2>Ready to start a project?</h2>
+          <p>
+            I'm looking for my first professional role or freelance
+            opportunities.
+          </p>
+          <form id="contactForm">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit" class="btn primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Developer Portfolio. Built with passion and Vanilla JS.</p>
+    </footer>
+  </body>
+</html>
