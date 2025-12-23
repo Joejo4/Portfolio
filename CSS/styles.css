@@ -1,0 +1,50 @@
+:root {
+  --bg-dark: #111827; /* Deep Navy Background */
+  --surface: #1f2937; /* Card/Surface Color */
+  --primary: #3b82f6; /* Primary Blue Accent */
+  --primary-glow: rgba(59, 130, 246, 0.3);
+  --text-light: #f9fafb; /* Off-White Text */
+  --text-muted: #94a3b8; /* Grayed Text */
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* --- Behavior: Reveal-on-Scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  background-color: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 10%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
