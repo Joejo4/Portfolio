@@ -324,6 +324,39 @@ body {
 #contactForm textarea:focus {
   outline: 2px solid var(--primary);
 }
+/* --- Connect with me --- */
+.Connect-with-me {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.connect-with-me h2 {
+  margin-bottom: 0.5rem;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.Email {
+  margin-top: 2rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+.Email h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.Email p {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
 /* --- Footer --- */
 .footer {
   text-align: center;
