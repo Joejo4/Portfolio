@@ -1,3 +1,11 @@
-alert(
-  "Hey Joseph! Welcome to your portfolio site.  Don't forget to update your connect-with-me and the icons and styling "
-);
+// BEHAVIOR 1: Intersection Observer for Reveal-on-Scroll
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
