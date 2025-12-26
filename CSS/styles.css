@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Behavior: Reveal-on-Scroll --- 
+/* --- Behavior: Reveal-on-Scroll --- */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -33,7 +33,7 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}*/
+}
 
 /* --- Navigation Bar --- */
 .navbar {
@@ -53,6 +53,53 @@ body {
   font-weight: 800;
   color: var(--text-light);
   letter-spacing: -1px;
+}
+.menu-toggle {
+  display: none;
+}
+.hamburger {
+  margin-left: auto;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-light);
+  letter-spacing: -1px;
+}
+.menu-toggle {
+  display: none;
+}
+.hamburger {
+  display: none;
+  width: clamp(40px, 6vw, 45px);
+  height: clamp(40px, 6vw, 45px);
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-light);
+  position: relative;
+  content: "";
+  /* transition: all 0.3s ease-in-out; */
+  transition: transform 0.25s ease, top 0.25s ease, background 0.25s ease;
+  transform-origin: center;
+}
+.hamburger span::before {
+  position: absolute;
+  top: -6px;
+}
+.hamburger span::after {
+  position: absolute;
+  top: 6px;
 }
 .nav-menu {
   list-style: none;
@@ -131,15 +178,6 @@ body {
   background: var(--primary);
   color: white;
   box-shadow: 0 10px 20px var(--primary-glow);
-}
-.btn.primary:hover {
-  transform: translateY(-2px);
-  background: #2563eb;
-}
-
-.btn.secondary {
-  border: 1px solid #374151;
-  color: var(--text-light);
 }
 .btn.primary:hover {
   transform: translateY(-2px);
@@ -382,6 +420,7 @@ img {
   .navbar {
     padding: 1.5rem 10%;
   }
+
   .hero {
     height: 100vh;
   }
@@ -398,7 +437,58 @@ img {
   .navbar {
     padding: 1rem 5%;
   }
-
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(12px);
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  }
+  .nav-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .nav-menu li a {
+    padding: 10px 0;
+  }
+  .nav-menu {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .menu-toggle:checked ~ nav .nav-menu {
+    max-height: 100vh;
+    height: 100vh;
+    padding: 1rem 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .menu-toggle:checked ~ .hamburger span {
+    background: transparent;
+  }
+  .menu-toggle:checked ~ .hamburger span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  .menu-toggle:checked ~ .hamburger span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
   .nav-menu {
     gap: 0.7rem;
   }
