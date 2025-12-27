@@ -1,3 +1,17 @@
+alert(
+  "Hello Joseph! Welcome to your portfolio site. just a reminder that you haven't finished the menu. After the click of home it should returned to the screen!"
+);
+
+//Hambuger menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuToggle.checked = false;
+  });
+});
+
 // BEHAVIOR 1: Intersection Observer for Reveal-on-Scroll
 const observerOptions = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries) => {

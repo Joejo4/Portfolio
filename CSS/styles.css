@@ -469,7 +469,7 @@ img {
     margin-top: 1rem;
   }
   .menu-toggle:checked ~ nav .nav-menu {
-    max-height: 100vh;
+    max-height: 50vh;
     height: 100vh;
     padding: 1rem 0;
     opacity: 1;
