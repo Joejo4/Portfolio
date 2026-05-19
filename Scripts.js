@@ -7,8 +7,13 @@ navLinks.forEach((link) => {
     menuToggle.checked = false;
   });
 });
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".nav-container")) {
+    menuToggle.checked = false;
+  }
+});
 
-// BEHAVIOR 1: Intersection Observer for Reveal-on-Scroll
+//  Intersection Observer for Reveal-on-Scroll
 const observerOptions = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -20,7 +25,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// BEHAVIOR 2: Project Filtering Logic
+//  Project Filtering Logic
 const filterBtns = document.querySelectorAll(".filter-btn");
 const projects = document.querySelectorAll(".project-card");
 
@@ -44,7 +49,7 @@ filterBtns.forEach((btn) => {
   });
 });
 
-// BEHAVIOR 3: Simple Form Feedback
+// Simple Form Feedback
 document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const btn = e.target.querySelector("button");
