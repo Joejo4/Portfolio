@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/styles.css" />
+
     <title>Jojoe-Frontend Developer</title>
   </head>
   <body>
@@ -70,33 +71,7 @@
               </div>
             </div>
           </div>
-          <!--
-          <div class="project-card reveal" data-category="js">
-            <div class="project-img">
-              <img
-                src="https://placehold.co/600x400/111/fff?text=Task+Architect"
-                alt="Task App"
-              />
-            </div>
-            <div class="project-info">
-              <h3>TO DO LIST APP</h3>
-              <p>A To-Do List app with local storage persistence.</p>
-              <div class="tags"><span>Vanilla JS</span><span class="btn primary">view</span></div>
-            </div>
-          </div>
-          <div class="project-card reveal" data-category="js">
-            <div class="project-img">
-              <img
-                src="https://placehold.co/600x400/111/fff?text=Task+Architect"
-                alt="Task App"
-              />
-            </div>
-            <div class="project-info">
-              <h3>TO DO LIST APP</h3>
-              <p>A To-Do List app with local storage persistence.</p>
-              <div class="tags"><span>Vanilla JS</span><span class="btn primary">view</span></div>
-            </div>
-          </div>-->
+
           <!-- Project 2 -->
           <div class="project-card reveal" data-category="ui">
             <div class="project-img">
@@ -191,7 +166,6 @@
           </div>
         </div>
       </section>
-      <!-- Contact Section -->
       <section id="contact" class="contact">
         <div class="contact-box reveal">
           <h2>Ready to start a project?</h2>
@@ -200,10 +174,18 @@
             opportunities.
           </p>
           <form id="contactForm">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message" rows="5" required></textarea>
-            <button type="submit" class="btn primary">Send Message</button>
+            <input type="text" name="name" placeholder="Name" required />
+
+            <input type="email" name="email" placeholder="Email" required />
+
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="5"
+              required
+            ></textarea>
+
+            <button type="submit" class="btn primary">send message</button>
           </form>
         </div>
       </section>

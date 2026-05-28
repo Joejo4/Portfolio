@@ -90,7 +90,10 @@ body {
   position: relative;
   content: "";
   /* transition: all 0.3s ease-in-out; */
-  transition: transform 0.25s ease, top 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    top 0.25s ease,
+    background 0.25s ease;
   transform-origin: center;
 }
 .hamburger span::before {
@@ -453,7 +456,10 @@ img {
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.4s ease,
+      padding 0.4s ease;
   }
   .nav-menu li {
     display: flex;
