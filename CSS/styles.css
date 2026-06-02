@@ -436,7 +436,7 @@ img {
   }
 }
 
-/*  Medium and Small Screens */
+/*  Medium and Small Screens 
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 5%;
@@ -508,6 +508,117 @@ img {
   .hero h1 {
     font-size: 2.8rem;
   }
+  .contact-box {
+    padding: 3rem 1rem;
+  }
+}*/
+/* Medium and Small Screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 5%;
+  }
+
+  /* 1. Target the actual nav element to hide/show it 
+  .navbar nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }*/
+  .navbar nav {
+    position: fixed; /* Fixed so it locks in place when scrolling */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px; /* Gives the sidebar a set elegant width */
+    height: 100vh;
+    background: var(--surface);
+    backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Pushes it completely off the right edge of the screen by default */
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.4s ease;
+    z-index: 999;
+  }
+
+  /* 2. Style the menu list inside the nav container */
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text cleanly to the left inside the drawer */
+    gap: 1.5rem;
+    padding: 6rem 2rem 2rem 2rem; /* Generous top padding so links sit below your header */
+    width: 100%;
+    list-style: none;
+    display: flex;
+  }
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* 3. REVEAL STATE: When checked, expand the 'nav' wrapper 
+  .menu-toggle:checked ~ nav {
+    max-height: 50vh;
+    opacity: 1;
+    pointer-events: auto;
+  }
+*/
+  .menu-toggle:checked ~ nav {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* 4. Hamburger Icon Default & Animations */
+  .hamburger {
+    display: flex;
+  }
+
+  .menu-toggle:checked ~ .hamburger span {
+    background: transparent;
+  }
+
+  .menu-toggle:checked ~ .hamburger span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle:checked ~ .hamburger span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .hero,
+  .work,
+  .skills,
+  .contact {
+    padding: 80px 5%;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
   .contact-box {
     padding: 3rem 1rem;
   }

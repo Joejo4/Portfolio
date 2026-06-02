@@ -2,13 +2,28 @@
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelectorAll(".nav-link");
 
-navLinks.forEach((link) => {
+/*navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     menuToggle.checked = false;
   });
 });
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".nav-container")) {
+    menuToggle.checked = false;
+  }
+});*/
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuToggle.checked = false;
+  });
+});
+// Close the menu when clicking anywhere outside of the navbar/hamburger
+document.addEventListener("click", (e) => {
+  const isNavbar = e.target.closest(".navbar");
+  const isHamburger = e.target.closest(".hamburger");
+
+  // If the user clicked outside the navbar and NOT on the hamburger icon, close it
+  if (!isNavbar && !isHamburger) {
     menuToggle.checked = false;
   }
 });
