@@ -1,31 +1,26 @@
-//Hambuger menu
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelectorAll(".nav-link");
+// Grab the UI Elements
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const navMenu = document.querySelector(".nav-menu");
 
-/*navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    menuToggle.checked = false;
-  });
-});
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".nav-container")) {
-    menuToggle.checked = false;
-  }
-});*/
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    menuToggle.checked = false;
-  });
-});
-// Close the menu when clicking anywhere outside of the navbar/hamburger
-document.addEventListener("click", (e) => {
-  const isNavbar = e.target.closest(".navbar");
-  const isHamburger = e.target.closest(".hamburger");
+// Toggle Mobile Menu Open/Closed
+hamburgerBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
 
-  // If the user clicked outside the navbar and NOT on the hamburger icon, close it
-  if (!isNavbar && !isHamburger) {
-    menuToggle.checked = false;
+  // Animate the hamburger icon itself between bars and an 'X'
+  const icon = hamburgerBtn.querySelector("i");
+  if (navMenu.classList.contains("active")) {
+    icon.className = "fa-solid fa-xmark";
+  } else {
+    icon.className = "fa-solid fa-bars";
   }
+});
+
+// Close mobile menu smoothly when clicking any link
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    hamburgerBtn.querySelector("i").className = "fa-solid fa-bars";
+  });
 });
 
 //  Intersection Observer for Reveal-on-Scroll
